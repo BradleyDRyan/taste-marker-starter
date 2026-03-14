@@ -4,6 +4,8 @@
 
 Dependencies:
 - `@base-ui/react` (^1.0.0)
+- `@phosphor-icons/react` (^2.1.10)
+- `framer-motion` (^12.36.0)
 - `next` (^15.3.3)
 - `react` (^19.1.0)
 - `react-dom` (^19.1.0)
@@ -38,6 +40,13 @@ These are thin wrappers around `@base-ui/react` primitives with `"use client"` d
 
 `src/app/globals.css` is imported by `src/app/layout.tsx` and **must not be deleted**.
 It imports Tailwind CSS — all Tailwind utility classes are available.
+
+For Tailwind v4 tokenized colors:
+
+- Put raw palette and semantic variables in `@layer base { :root { ... } }`.
+- Expose token-backed utilities with `@theme inline` when the theme values reference CSS variables.
+- Do not assume JSX class names are enough. If you add `bg-lui-*` or similar utilities, verify the served CSS actually contains the utility and that the browser applies the expected computed style.
+- `tsc` can validate types, but it does not prove custom theme utilities are active in the browser.
 
 ## Framework
 
