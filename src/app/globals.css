@@ -1,1 +1,79 @@
 @import "tailwindcss";
+
+:root {
+  --page-bg: #0a0d10;
+  --page-ink: #f4efe8;
+  --page-muted: #b2a89a;
+  --grid-line: rgba(255, 255, 255, 0.06);
+  --glow-teal: rgba(56, 178, 163, 0.16);
+  --glow-amber: rgba(255, 176, 95, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--page-bg);
+  color: var(--page-ink);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--page-ink);
+  background:
+    radial-gradient(circle at 18% 10%, var(--glow-amber), transparent 24%),
+    radial-gradient(circle at 84% 18%, var(--glow-teal), transparent 22%),
+    radial-gradient(circle at 50% 120%, rgba(255, 210, 148, 0.08), transparent 34%),
+    linear-gradient(180deg, #13100e 0%, #0d1013 42%, #080b0d 100%);
+  font-family: "Space Grotesk", "IBM Plex Sans", "Avenir Next", "Segoe UI", sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, transparent 0, transparent calc(100% - 1px), var(--grid-line) calc(100% - 1px)),
+    linear-gradient(to bottom, transparent 0, transparent calc(100% - 1px), var(--grid-line) calc(100% - 1px));
+  background-size: 88px 88px;
+  mask-image: radial-gradient(circle at center, black 26%, transparent 92%);
+  opacity: 0.42;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.02), transparent 28%),
+    linear-gradient(300deg, rgba(255, 255, 255, 0.02), transparent 24%);
+  opacity: 0.75;
+}
+
+::selection {
+  background: rgba(56, 178, 163, 0.28);
+  color: white;
+}
+
+.learning-shell {
+  position: relative;
+  isolation: isolate;
+}
+
+.learning-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 12% 24%, rgba(255, 176, 95, 0.07), transparent 18%),
+    radial-gradient(circle at 82% 30%, rgba(56, 178, 163, 0.08), transparent 18%),
+    radial-gradient(circle at 50% 88%, rgba(255, 224, 189, 0.05), transparent 24%);
+  z-index: -1;
+}
