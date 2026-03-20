@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+});
+
 export const metadata: Metadata = {
-  title: "App",
+  title: "Dashboard Scoring Console",
+  description: "A quality evaluation console for scoring dashboard outputs on clarity, trust, and decision readiness.",
 };
 
 export default function RootLayout({
@@ -12,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={spaceGrotesk.variable}>{children}</body>
     </html>
   );
 }
