@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "App",
+  title: "Scoring Agent Console",
+  description: "Dashboard output quality evaluation workspace.",
 };
 
 export default function RootLayout({
