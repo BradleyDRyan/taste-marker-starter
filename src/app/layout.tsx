@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "App",
+  title: "Skill Learning Console",
+  description: "Learning agent interface for turning experiment history into stronger skill-file guidance.",
 };
 
 export default function RootLayout({
@@ -12,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

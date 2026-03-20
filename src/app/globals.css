@@ -1,1 +1,93 @@
 @import "tailwindcss";
+
+:root {
+  --color-ink: #07111f;
+  --color-ink-2: #0b1527;
+  --color-panel: rgba(11, 20, 36, 0.76);
+  --color-panel-strong: rgba(10, 18, 34, 0.92);
+  --color-line: rgba(160, 190, 255, 0.16);
+  --color-line-strong: rgba(207, 226, 255, 0.24);
+  --color-paper: #edf4ff;
+  --color-muted: #98aacb;
+  --color-accent: #89d8ff;
+  --color-warm: #f5c977;
+  --shadow-panel: 0 32px 80px rgba(3, 8, 17, 0.45);
+  --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  --font-body: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--color-ink);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--color-paper);
+  font-family: var(--font-body);
+  background:
+    radial-gradient(circle at top left, rgba(137, 216, 255, 0.18), transparent 28%),
+    radial-gradient(circle at 82% 16%, rgba(245, 201, 119, 0.16), transparent 24%),
+    linear-gradient(180deg, #09111e 0%, #08111f 48%, #0a1425 100%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(137, 216, 255, 0.28);
+  color: #ffffff;
+}
+
+@layer utilities {
+  .surface-card {
+    background: var(--color-panel);
+    border: 1px solid var(--color-line);
+    box-shadow: var(--shadow-panel);
+    backdrop-filter: blur(24px);
+  }
+
+  .surface-card-strong {
+    background: var(--color-panel-strong);
+    border: 1px solid var(--color-line-strong);
+    box-shadow: var(--shadow-panel);
+    backdrop-filter: blur(26px);
+  }
+
+  .fine-grid {
+    background-image:
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
+      linear-gradient(rgba(152, 170, 203, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(152, 170, 203, 0.08) 1px, transparent 1px);
+    background-size:
+      100% 100%,
+      48px 48px,
+      48px 48px;
+    background-position: center;
+  }
+
+  .text-muted {
+    color: var(--color-muted);
+  }
+}
