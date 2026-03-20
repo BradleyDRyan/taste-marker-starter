@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "App",
+  title: "Employee AI Token Dashboard",
 };
 
 export default function RootLayout({
