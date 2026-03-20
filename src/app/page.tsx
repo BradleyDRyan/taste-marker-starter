@@ -1,7 +1,5 @@
+import { SkillImprovementDashboard } from "@/components/skill-improvement-dashboard";
+
 export default function Page() {
-  return (
-    <main className="flex min-h-screen items-center justify-center">
-      <h1 className="text-2xl font-semibold">Hello</h1>
-    </main>
-  );
+  return <SkillImprovementDashboard />;
 }
